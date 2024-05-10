@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Trainer</title>
+    <link href="mship.css" rel="stylesheet">
+    <link href="index.html">
+    <script src="trainer.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Find a Trainer</h1>
+        <nav>
+            <ul>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="membership.html">Membership</a></li>
+                <li><a href="find_a_trainer.html">Find a Trainer</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Find the Perfect Trainer</h2>
+            <form id="trainerForm">
+                <label for="areaOfExpertise">Select an area of expertise:</label><br>
+                <select id="areaOfExpertise" name="areaOfExpertise">
+                    <option value="cardiovascular">Cardiovascular</option>
+                    <option value="Flexibility">Flexibility</option>
+                    <option value="Upper and lower body">Upper and lower body</option>
+                    <option value="muscle retention">Muscle retention</option>
+                </select><br><br>
+
+                <label for="availability">Select your hours of availability:</label><br>
+                <select id="availability" name="availability">
+                    <option value="4:00pm-5:00pm">4:00pm-5:00pm</option>
+                    <option value="5:30pm-6:30pm">5:30pm-6:30pm</option>
+                    <option value="7:00pm-8:30pm">7:00pm-8:30pm</option>
+                    <option value="9:00pm-10:30pm">9:00pm-10:30pm</option>
+                </select>
+
+                <button type="button" onclick="findTrainer()">Find Trainer</button>
+            </form>
+
+            <div id="trainerNames">
+                
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p> 300 jay st Brooklyn, Ny</p>
+    </footer>
+
+    
+</body>
+</html>

@@ -1,0 +1,22 @@
+/* CSS for membership.html */
+
+body {
+    background-color: #3498db; /* Set background color to blue */
+    color:black; /* Set text color to white */
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around; /* Spread linked files evenly */
+    padding: 0;
+}
+nav ul li {
+    list-style-type: none;
+}
+nav ul li a:hover {
+    color: purple;
+}
+
+nav ul li a:active {
+    color: purple; 
+}

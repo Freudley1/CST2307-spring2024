@@ -1,0 +1,37 @@
+body {
+    background-color: lightgrey;
+    color: brown;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between; /* Spread linked files evenly */
+    padding: 0;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: purple; /* Change to purple on hover */
+}
+
+nav ul li a:active {
+    color: purple; /* Change to purple when clicked */
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between; /* Spread images evenly */
+    margin-top: 50px; /* Adjust spacing from the top */
+}
+.image-container img {
+    width: 30%; /* Adjust image width */
+    max-width: 300px; /* Set maximum image width */
+}

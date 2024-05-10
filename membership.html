@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="validation.css" rel="stylesheet">
+    <link href="mship.css" rel="stylesheet">
+    <link href="index.html">
+    <title>Membership</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="membership.html">Membership</a></li>
+                <li><a href="find_a_trainer.html">Find a Trainer</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Membership Form</h2>
+            <form id="membershipForm" onsubmit="return validateForm()">
+                <label for="firstName">First Name:</label><br>
+                <input type="text" id="firstName" name="firstName" required><br>
+                <span id="firstNameError" class="error"></span><br>
+
+                <label for="lastName">Last Name:</label><br>
+                <input type="text" id="lastName" name="lastName" required><br>
+                <span id="lastNameError" class="error"></span><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <span id="emailError" class="error"></span><br>
+
+                <label for="membershipType">Membership Type:</label><br>
+                <select id="membershipType" name="membershipType" required>
+                    <option value="">Select</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                </select><br>
+                <span id="membershipTypeError" class="error"></span><br>
+
+                <label for="paymentType">Payment Type:</label><br>
+                <select id="paymentType" name="paymentType" required>
+                    <option value="">Select</option>
+                    <option value="visa">Visa</option>
+                    <option value="mastercard">Mastercard</option>
+                    <option value="discover">Discover</option>
+                </select><br>
+                <span id="paymentTypeError" class="error"></span><br>
+
+                <label for="cardNumber">Card Number:</label><br>
+                <input type="text" id="cardNumber" name="cardNumber" required><br>
+                <span id="cardNumberError" class="error"></span><br>
+
+                <label for="expirationDate">Expiration Date:</label><br>
+                <input type="text" id="expirationDate" name="expirationDate" placeholder="MM/YYYY" required><br>
+                <span id="expirationDateError" class="error"></span><br>
+
+                <label for="cvc">CVC:</label><br>
+                <input type="text" id="cvc" name="cvc" required><br>
+                <span id="cvcError" class="error"></span><br>
+
+                <button type="submit">Submit Payment</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>Give us a call!</p>
+    </footer>
+
+
+ <script>
+        function validateForm() {
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            var email = document.getElementById("email").value;
+            var membershipType = document.getElementById("membershipType").value;
+            var paymentType = document.getElementById("paymentType").value;
+            var cardNumber = document.getElementById("cardNumber").value;
+            var expirationDate = document.getElementById("expirationDate").value;
+            var cvc = document.getElementById("cvc").value;
+
+            var isValid = true;
+
+            if (!/^[a-zA-Z]*$/g.test(firstName)) {
+                document.getElementById("firstNameError").innerHTML = "Invalid first name";
+                isValid = false;
+            } else {
+                document.getElementById("firstNameError").innerHTML = "";
+            }
+
+            if (!/^[a-zA-Z]*$/g.test(lastName)) {
+                document.getElementById("lastNameError").innerHTML = "Invalid last name";
+                isValid = false;
+            } else {
+                document.getElementById("lastNameError").innerHTML = "";
+            }
+
+            if (!/\S+@\S+\.\S+/.test(email)) {
+                document.getElementById("emailError").innerHTML = "Invalid email address";
+                isValid = false;
+            } else {
+                document.getElementById("emailError").innerHTML = "";
+            }
+
+            if (membershipType === "") {
+                document.getElementById("membershipTypeError").innerHTML = "Please select a membership type";
+                isValid = false;
+            } else {
+                document.getElementById("membershipTypeError").innerHTML = "";
+            }
+
+            if (paymentType === "") {
+                document.getElementById("paymentTypeError").innerHTML = "Please select a payment type";
+                isValid = false;
+            } else {
+                document.getElementById("paymentTypeError").innerHTML = "";
+            }
+
+            if (!/^\d{16}$/.test(cardNumber)) {
+                document.getElementById("cardNumberError").innerHTML = "Invalid card number";
+                isValid = false;
+            } else {
+                document.getElementById("cardNumberError").innerHTML = "";
+            }
+
+            if (!/^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/.test(expirationDate)) {
+                document.getElementById("expirationDateError").innerHTML = "Invalid expiration date";
+                isValid = false;
+            } else {
+                document.getElementById("expirationDateError").innerHTML = "";
+            }
+
+            if (!/^\d{3}$/.test(cvc)) {
+                document.getElementById("cvcError").innerHTML = "Invalid CVC";
+                isValid = false;
+            } else {
+                document.getElementById("cvcError").innerHTML = "";
+            }
+
+            return isValid;
+        }
+    </script>
+</body>
+</html>
